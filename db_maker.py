@@ -37,8 +37,7 @@ df1['Type'] = unique_types
 df1['Value'] = unique_values
 df1['Count'] = count
 
-path = str(config["CSV"]["csv_path"]).replace("\\", "/")
-df1.to_csv(path_or_buf = path, index=False)
+df1.to_csv(config["CSV"]["csv_path"], index=False)
 
 conn = psycopg2.connect(database=config["PSQL"]['database'], user=config["PSQL"]['user'],
     password=config["PSQL"]['password'], host=config["PSQL"]['host'], port=config["PSQL"]['port'])
